@@ -1,0 +1,38 @@
+<div class="container">
+    <form method="post">
+        <h1>{{action}}</h1>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+        </div>
+        <div class="mb-3">
+            <label for="url" class="form-label">URL</label>
+            <input type="text" class="form-control" id="url" name="url" value="{{name}}">
+        </div>
+        <div class="mb-3">
+            <label for="normalPrice" class="form-label">Normal price</label>
+            <input type="text" class="form-control" id="normalPrice" name="normalPrice" value="{{name}}">
+        </div>
+        <div class="mb-3">
+            <label for="priority" class="form-label">Priority</label>
+            <input type="text" class="form-control" id="priority" name="priority" value="{{name}}">
+        </div>
+        <div class="mb-3">
+            <label for="store" class="form-label">Select store</label>
+            <select class="form-select" aria-label="Select store" name="store" id="store">
+                {{#store}}
+                    <option value="{{.}}">{{.}}</option>
+                {{/store}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="priority" class="form-label">Select view</label>
+            <select class="form-select" aria-label="Select view" name="view" id="view">
+                {{#view}}
+                    <option value="{{.}}">{{.}}</option>
+                {{/view}}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

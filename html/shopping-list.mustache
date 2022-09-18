@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="/new">
+                <button type="button" class="btn btn-primary float-left">Add Product</button>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Normally</th>
+            <th scope="col">Current</th>
+            <th scope="col">Sale %</th>
+            <th scope="col"># Skus</th>
+            <th scope="col">Remove</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#list}}
+            <tr>
+                <th scope="row">{{idx}}</th>
+                <td>{{name}}</td>
+                <td>{{normalPrice}}</td>
+                <td>{{price}}</td>
+                <td>{{salePct}}%</td>
+                <td>{{numSkus}}</td>
+                <td>
+                    <a href="/delete?name={{name}}">
+                    <button class="btn btn-danger btn-sm">Remove</button>
+                    </a>
+                </td>
+            </tr>
+        {{/list}}
+        </tbody>
+    </table>
+</div>

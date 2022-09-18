@@ -1,0 +1,11 @@
+[Unit]
+Description=Sale bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=%h/sale-bot
+ExecStart=npm run serve &> run.log
+
+[Install]
+WantedBy=default.target
