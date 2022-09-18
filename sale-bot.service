@@ -6,6 +6,7 @@ Wants=network-online.target
 [Service]
 WorkingDirectory=%h/sale-bot
 ExecStart=npm run serve &> run.log
+Restart=on-failure
 
 [Install]
 WantedBy=default.target
