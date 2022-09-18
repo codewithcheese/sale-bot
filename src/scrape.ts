@@ -93,7 +93,7 @@ export async function startScrape(db: Low<Catalogue>) {
                 logger.info('Finished scraping all products')
             } finally {
                 await browser.close()
-                db.data.lastScrapeDate = new Date().toLocaleDateString()
+                db.data.lastScrapeDate = new Date().toDateString()
                 await db.write()
             }
         } else {
