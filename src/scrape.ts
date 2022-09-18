@@ -59,7 +59,7 @@ export async function scrape(browser: puppeteer.Browser, product: Product): Prom
 }
 
 function hasOneDayPassed(db: Low<Catalogue>) {
-    return new Date() > new Date(`${db.data.lastScrapeDate} ${db.data.config.scrape.startTime}`)
+    return new Date().toDateString() !== db.data.lastScrapeDate && new Date() > new Date(`${db.data.lastScrapeDate} ${db.data.config.scrape.startTime}`)
 }
 
 export async function startScrape(db: Low<Catalogue>) {
