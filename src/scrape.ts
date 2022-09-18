@@ -29,8 +29,6 @@ export const scrapers = {
                             price,
                             at: new Date().toISOString()
                         };
-                    } else {
-                        throw Error('Element query failed')
                     }
                 })
                 return {ok: true, skus}
