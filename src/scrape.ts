@@ -4,6 +4,7 @@ import _ from "lodash";
 import {Low} from "lowdb";
 import {Catalogue, Product, Sku, Store, View} from "./catalogue.js";
 import logger from "./logger.js";
+import fs from "fs";
 
 const slugify = (text: string) => _.kebabCase(text);
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -64,7 +65,14 @@ function hasOneDayPassed(db: Low<Catalogue>) {
 }
 
 export async function startScrape(db: Low<Catalogue>) {
+
+    // create directory for screenshot
+    if (!fs.existsSync(path.resolve('./screenshots'))) {
+        fs.mkdirSync(path.resolve('./screenshots'));
+    }
+
     while (!cancelled) {
+        // run once per day
         if (hasOneDayPassed(db) && db.data.products.length > 0) {
             logger.info('Starting scrape...')
             const browser = await puppeteer.launch({headless: db.data.config.scrape.headless});
