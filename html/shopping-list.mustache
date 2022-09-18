@@ -15,8 +15,9 @@
             <th scope="col">Name</th>
             <th scope="col">Normally</th>
             <th scope="col">Current</th>
-            <th scope="col">Sale %</th>
-            <th scope="col"># Skus</th>
+            <th scope="col">Sale%</th>
+            <th scope="col">#Skus</th>
+            <th scope="col">Since</th>
             <th scope="col">Remove</th>
         </tr>
         </thead>
@@ -29,6 +30,7 @@
                 <td>{{price}}</td>
                 <td>{{salePct}}%</td>
                 <td>{{numSkus}}</td>
+                <td>{{since}}</td>
                 <td>
                     <a href="/delete?name={{name}}">
                     <button class="btn btn-danger btn-sm">Remove</button>
